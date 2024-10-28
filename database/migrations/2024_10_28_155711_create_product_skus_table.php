@@ -14,16 +14,14 @@ class CreateProductSkusTable extends Migration
     public function up()
     {
         Schema::create('product_skus', function (Blueprint $table) {
-            Schema::create('product_skus', function (Blueprint $table) {
-                $table->bigIncrements('id');
-                $table->string('title');
-                $table->string('description');
-                $table->decimal('price', 10, 2);
-                $table->unsignedInteger('stock');
-                $table->unsignedBigInteger('product_id');
-                $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-                $table->timestamps();
-            });
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('description');
+            $table->decimal('price', 10, 2);
+            $table->unsignedInteger('stock');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
