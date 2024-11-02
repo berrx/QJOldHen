@@ -14,7 +14,7 @@ class CreateProductSkusTable extends Migration
     public function up()
     {
         Schema::create('product_skus', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id;
             $table->string('title');
             $table->string('description');
             $table->decimal('price', 10, 2);
