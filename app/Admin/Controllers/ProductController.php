@@ -53,8 +53,6 @@ class ProductController extends AdminController
             $show->field('smlimg_url');
             $show->field('price');
             $show->field('status');
-            $show->field('create_time');
-            $show->field('update_time');
             $show->field('created_at');
             $show->field('updated_at');
         });
@@ -74,8 +72,6 @@ class ProductController extends AdminController
             $form->text('smlimg_url');
             $form->text('price');
             $form->text('status');
-            $form->text('create_time');
-            $form->text('update_time');
         
             $form->display('created_at');
             $form->display('updated_at');
