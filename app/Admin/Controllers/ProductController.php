@@ -58,25 +58,25 @@ class ProductController extends AdminController
         });
     }
 
-    /**
-     * Make a form builder.
-     *
-     * @return Form
-     */
-    protected function form()
-    {
-        return Form::make(new Product(), function (Form $form) {
-            $form->display('id');
-            $form->text('name');
-            $form->text('bigimg_url');
-            $form->text('smlimg_url');
-            $form->text('price');
-            $form->text('status');
+    // /**
+    //  * Make a form builder.
+    //  *
+    //  * @return Form
+    //  */
+    // protected function form()
+    // {
+    //     return Form::make(new Product(), function (Form $form) {
+    //         $form->display('id');
+    //         $form->text('name');
+    //         $form->text('bigimg_url');
+    //         $form->text('smlimg_url');
+    //         $form->text('price');
+    //         $form->text('status');
         
-            $form->display('created_at');
-            $form->display('updated_at');
-        });
-    }
+    //         $form->display('created_at');
+    //         $form->display('updated_at');
+    //     });
+    // }
 
     protected function form()
     {
@@ -103,9 +103,9 @@ class ProductController extends AdminController
         // });
 
         // 定义事件回调，当模型即将保存时会触发这个回调
-        $form->saving(function (Form $form) {
-            $form->model()->price = collect($form->input('skus'))->where(Form::REMOVE_FLAG_NAME, 0)->min('price') ?: 0;
-        });
+        // $form->saving(function (Form $form) {
+        //     $form->model()->price = collect($form->input('skus'))->where(Form::REMOVE_FLAG_NAME, 0)->min('price') ?: 0;
+        // });
 
         return $form;
     }
